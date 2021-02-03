@@ -40,7 +40,9 @@ const Navigation: React.FC<any> = () => {
           <a className="navbar-item">
             <Link to={"/contacts"}>Контакти</Link>
           </a>
-          <a className="navbar-item">Інстаграм</a>
+          <a className="navbar-item">
+            <Link to={"/instagram"}></Link>Інстаграм
+          </a>
           <div className=" navbar-item has-dropdown is-hoverable">
             <a className="navbar-link">Більше</a>
             <div className="navbar-dropdown">

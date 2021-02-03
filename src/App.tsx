@@ -19,6 +19,13 @@ function App() {
         <Route exact path="/contacts">
           <Contacts />
         </Route>
+        <Route
+          exact
+          path={"/instagram"}
+          render={() =>
+            (window.location.href = "https://www.instagram.com/shawbar.kyiv/")
+          }
+        ></Route>
       </Switch>
     </Router>
   );
