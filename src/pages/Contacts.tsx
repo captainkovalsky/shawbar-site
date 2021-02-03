@@ -3,7 +3,7 @@ import MapContainer from "../components/GoogleMap";
 const Contacts = () => {
   return (
     <section className={"section"}>
-      Contact
+      Ми тут
       <MapContainer />
     </section>
   );
