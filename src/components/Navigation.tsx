@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import { Link } from "react-router-dom";
 
 import cls from "classnames";
 
 const Navigation: React.FC<any> = () => {
   const [isActive, setIsActive] = useState<boolean>(false);
+  const onSelected = useCallback(() => setIsActive(false), []);
 
   return (
     <nav
@@ -13,7 +14,7 @@ const Navigation: React.FC<any> = () => {
       aria-label="main navigation"
     >
       <div className="navbar-brand">
-        <a className="navbar-item" href="/">
+        <a className="navbar-item" href="/" onClick={onSelected}>
           <img src="Logo180.png" />
         </a>
         <a
@@ -34,22 +35,30 @@ const Navigation: React.FC<any> = () => {
         className={cls("navbar-menu", { "is-active": isActive })}
       >
         <div className="navbar-start">
-          <a className="navbar-item">
+          <a className="navbar-item" onClick={onSelected}>
             <Link to={"/"}>Меню</Link>
           </a>
-          <a className="navbar-item">
+          <a className="navbar-item" onClick={onSelected}>
             <Link to={"/contacts"}>Контакти</Link>
           </a>
-          <a className="navbar-item">
+          <a className="navbar-item" onClick={onSelected}>
             <Link to={"/instagram"}>Інстаграм</Link>
           </a>
           <div className=" navbar-item has-dropdown is-hoverable">
-            <a className="navbar-link">Більше</a>
+            <a className="navbar-link" onClick={onSelected}>
+              Більше
+            </a>
             <div className="navbar-dropdown">
-              <a className="navbar-item">Про нас</a>
-              <a className="navbar-item">Робота</a>
+              <a className="navbar-item" onClick={onSelected}>
+                Про нас
+              </a>
+              <a className="navbar-item" onClick={onSelected}>
+                Робота
+              </a>
               <hr className="navbar-divider" />
-              <a className="navbar-item">Зворотній звязок</a>
+              <a className="navbar-item" onClick={onSelected}>
+                Зворотній звязок
+              </a>
             </div>
           </div>
         </div>
