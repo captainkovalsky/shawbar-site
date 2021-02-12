@@ -35,15 +35,15 @@ const Navigation: React.FC<any> = () => {
         className={cls("navbar-menu", { "is-active": isActive })}
       >
         <div className="navbar-start">
-          <a className="navbar-item" onClick={onSelected}>
-            <Link to={"/"}>Меню</Link>
-          </a>
-          <a className="navbar-item" onClick={onSelected}>
-            <Link to={"/contacts"}>Контакти</Link>
-          </a>
-          <a className="navbar-item" onClick={onSelected}>
-            <Link to={"/instagram"}>Інстаграм</Link>
-          </a>
+          <Link className="navbar-item" onClick={onSelected} to={"/"}>
+            Меню
+          </Link>
+          <Link className="navbar-item" onClick={onSelected} to={"/contacts"}>
+            Контакти
+          </Link>
+          <Link className="navbar-item" onClick={onSelected} to={"/instagram"}>
+            Інстаграм
+          </Link>
           <div className=" navbar-item has-dropdown is-hoverable">
             <a className="navbar-link" onClick={onSelected}>
               Більше
